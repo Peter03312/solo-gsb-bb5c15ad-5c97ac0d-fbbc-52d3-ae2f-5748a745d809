@@ -256,4 +256,4 @@ function get() {
   return db;
 }
 
-module.exports = { open, get };
+module.exports = { open, get, SCHEMA };

@@ -8,7 +8,9 @@
   },
   "scripts": {
     "start": "node server.js",
-    "test": "node --test"
+    "test": "node --test",
+    "backup": "node src/backup.js export",
+    "restore": "node src/backup.js restore"
   },
   "dependencies": {
     "better-sqlite3": "^11.10.0",

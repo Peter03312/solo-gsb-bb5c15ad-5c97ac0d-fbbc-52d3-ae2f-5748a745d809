@@ -3127,8 +3127,9 @@ app.get(/^(?!\/api\/).*/, (req, res) => {
 
 // 直接运行（node server.js / npm start / Docker）时启动监听；被测试 require 时只导出 app
 if (require.main === module) {
-  app.listen(PORT, () => {
-    console.log(`小剧场灯光 Cue 排演应用已启动: http://localhost:${PORT}`);
+  const server = app.listen(PORT, () => {
+    const actualPort = server.address() && server.address().port;
+    console.log(`小剧场灯光 Cue 排演应用已启动: http://localhost:${actualPort || PORT}`);
     console.log(`数据库: ${DB_PATH}`);
   });
 }
