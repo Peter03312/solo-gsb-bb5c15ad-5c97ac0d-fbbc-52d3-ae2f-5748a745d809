@@ -8,6 +8,8 @@
   },
   "scripts": {
     "start": "node server.js",
+    "backup": "node src/backup.js backup",
+    "restore": "node src/backup.js restore",
     "test": "node --test"
   },
   "dependencies": {
